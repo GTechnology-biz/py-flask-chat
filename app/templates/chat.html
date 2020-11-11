@@ -48,8 +48,11 @@
                         socket.emit('text', {msg: text});
                     }
                 });
-                $( "#button" ).click(function() {
-                    $( "#text" ).keypress();
+                $('#button').click(function() {
+                    text = $('#text').val();
+                    $('#text').val('');
+                    socket.emit('text', {msg: text});
+                    }
                 });
             });
             function leave_room() {
@@ -62,12 +65,12 @@
             }
         </script>
     </head>
-    <body>
+    <body><div id="page">
         <center>
         <h1>Ch..Ch...Chat {{ room }}</h1><br>
         <textarea id="chat" cols="100" rows="40"></textarea><br><br>
         <input id="text" size="80" placeholder="Enter your message here"><button id="button">">>Submit<<"</button><br><br><br><br><br><br>
         <a href="#" onclick="leave_room();"(╯°□°）╯︵┻━┻ >>>Leave this room :-( </a>
-        </center>
+        </center></div>
     </body>
 </html>
