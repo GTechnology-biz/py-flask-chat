@@ -48,7 +48,7 @@
                         socket.emit('text', {msg: text});
                     }
                 });
-                $('#button').click() {
+                $('#button').click(function() {
                     text = $('#text').val();
                     $('#text').val('');
                     socket.emit('text', {msg: text});
